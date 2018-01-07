@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.js"></script>
+    <![ednif]-->
+    <style>
+    #reg{
+width:600px;height:650px;
+border:2px solid mediumseagreen;
+margin:0 auto;padding:45px 88px;
+margin:50px auto;
+line-height:28px;font-size:14px;
+position: relative;
+}
+
+
+
+p{
+line-height:20px; font-size:12px;
+clear:left; padding-left:120px; color:#999;
+}
+input{
+width:222px;line-height:18px;
+padding:5px;background-color:#fff;
+border:1px solid #cbcccc;
+}
+#regBut input{
+width:165px;height:40px;
+background-color:mediumseagreen;
+border:none;color:#fff;cursor:pointer;
+}
+#regBut{ 
+padding-top:15px;text-align:center;
+}
+.reg1{
+padding-top:18px;color:#333;
+border-top:solid 5px mediumseagreen;
+ 
+}
+
+strong{
+
+display: none;
+float:right;
+width:30px;
+height:30px;
+position:absolute;
+overflow:hidden;
+}
+    
+    
+    
+    
+    </style>
+   
+    </head>
+<body>
+      <!--顶部导航-->
+   <div class="navbar navbar-inverse"role="navigation" id="menu-nav" style="background-color: white; border: none;">
+   <div class="container">
+           <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color: mediumseagreen;">
+                   <span class="sr-only">切换导航</span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+               </button>
+               <a href="#" class="navbar-brand" style="color:mediumseagreen; font-size: 180%;">图书管理系统</a>
+           </div>
+           <div class="navbar-collapse collapse">
+             <ul class="nav navbar-nav" >
+                 <li ><a href="1shouye.html" >首页</a></li>
+                <li ><a href="2shukuguanli.html" >书库管理</a></li>
+                <li ><a href="3tushuchaxun.html" >图书查询</a>
+                     
+                 </li>
+                  <li ><a href="4tushuliulan.html" >图书浏览</a>
+                     
+                 </li>
+                   <li class="active"><a href="#ad-carousel" style="background-color: mediumseagreen; ">注册</a></li>
+                 <li><a href="6lenglu.html">登录</a></li>
+             </ul>
+           </div>
+       </div>
+   </div>
+  <div id="reg">
+<div id="wel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注册账号，已有账号？立即登录</div>
+<div class="reg1">
+<form name="logForm" method="post" action="" onsubmit="return checkForm()">
+  <div class="regCon" >
+   &nbsp; &nbsp;  用户名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    <input type="text" name="username" onblur="checkUser()" style="border: 2px solid mediumseagreen;">
+    <strong id='str1'></strong>
+    <p id='us'></p>
+   </div>
+   <div class="password">
+      设置密码：
+     
+      <input type="password" name="pwd" onblur="checkPass()"style="border: 2px solid mediumseagreen;">
+      <strong id='str2'></strong>
+      <p id='pa'></p>
+   </div>
+   <div>
+      确认密码：
+      
+      <input type="password" name="repwd" id="" onblur="checkRepass()"style="border: 2px solid mediumseagreen;">
+      <strong id='str3'></strong>
+      <p id="repa"></p>
+   </div>
+   <div>
+     &nbsp;手机号码：
+     
+      <input type="text" name="phone" id="" onblur="checkPhone()"style="border: 2px solid mediumseagreen;">
+      <strong id='str4'></strong>
+      <p id="tel"></p>
+   </div>
+  
+   
+  <div id="regBut"><input type="submit" value="立即注册" onclick="window.location='6lenglu.html'" style="position: absolute;top: 525px;left: 220px;"></div>
+</form>
+    </div>
+</div>
+
+<script>
+
+
+function checkUser(){
+var user = document.logForm.username.value;
+var us=document.getElementById('us');
+var str1=document.getElementById('str1');
+if( user.length<6){
+us.innerHTML='用户名不得少于6个字符';
+str1.style.backgroundPosition='3px -3px';
+str1.style.display='inline-block';
+us.style.color='red';return false;
+}else if(user.length >20){
+us.innerHTML='用户名不得多于20个字符';
+str1.style.backgroundPosition='3px -3px';
+str1.style.display='inline-block';
+us.style.color='red';return false;
+}else if(!isNaN(user)){
+us.innerHTML='用户名不能全为数字！';
+str1.style.backgroundPosition='3px -3px';
+str1.style.display='inline-block';
+us.style.color='red';return false;
+}else{
+us.innerHTML='输入正确！'; 
+str1.style.backgroundPosition='3px 30px';
+str1.style.display='inline-block';
+us.style.color="green";
+return true;
+}
+}
+function checkPass(){
+var pwd = document.logForm.pwd.value;
+var pa = document.getElementById('pa');
+var str2 = document.getElementById('str2');
+if(pwd.length <8){
+pa.innerHTML='密码不得小于8位！';
+str2.style.backgroundPosition='3px -3px';
+str2.style.display='inline-block';
+pa.style.color='red';return false;
+}else if(pwd.length >20){
+str2.style.backgroundPosition='3px -3px';
+str2.style.display='inline-block';
+pa.innerHTML='密码不得小于8位！';
+pa.style.color='red';return false;
+}
+else if(!isNaN(pwd)){
+str2.style.backgroundPosition='3px -3px';
+str2.style.display='inline-block';
+pa.innerHTML='密码太弱：试试数字、字母混合！';
+pa.style.color='red';return false;
+}else{
+str2.style.backgroundPosition='3px 30px';
+str2.style.display='inline-block';
+pa.innerHTML='输入正确！'; 
+pa.style.color="green";
+return true;
+}
+}
+function checkRepass(){
+var pwd = document.logForm.pwd.value;
+var repa = document.getElementById('repa');
+var repwd = document.logForm.repwd.value;
+var str3 = document.getElementById('str3');
+if(repwd != pwd){
+str3.style.backgroundPosition='3px -3px';
+str3.style.display='inline-block';
+repa.innerHTML='两次密码不一致！';
+repa.style.color='red';return false;
+}else{
+str3.style.backgroundPosition='3px 30px';
+str3.style.display='inline-block';
+repa.innerHTML='输入正确！'; 
+repa.style.color="green";
+return true;
+}
+}
+function checkPhone(){
+var phone =document.logForm.phone.value;
+var tel = document.getElementById('tel');
+var str4=document.getElementById('str4');
+  if(phone.match(/^1[3|4|5|7|8]\d{9}$/)==null){
+  str4.style.backgroundPosition='3px -3px';
+str4.style.display='inline-block';
+tel.innerHTML='手机号码格式错误！';
+tel.style.color='red';return false;
+}else{
+str4.style.backgroundPosition='3px 30px';
+str4.style.display='inline-block';
+tel.innerHTML='输入正确！';
+tel.style.color='green';
+return true;
+}
+}
+function checkForm(){
+return checkUser() && checkPass() && checkRepass() && checkPhone();
+}
+    
+</script>
+
+      
+   
+
+   
+   
+   
+ 
+</body>
+</html>  

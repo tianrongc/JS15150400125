@@ -1,0 +1,19 @@
+{
+    "book":[
+        {
+            "name":"java",
+            "author":"史密斯",
+            "price":39
+        },
+         {
+            "name":"javascript",
+            "author":"大卫",
+            "price":39
+        },
+         {
+            "name":"面向对象程序设计",
+            "author":"dawei",
+            "price":29
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+table{
+    color: darkgray;
+    border-spacing: 0;
+}
+th,td{
+    width: 100px;
+    height: 30px;
+    border: 1px solid grey;
+    text-indent: 1em;
+}
+th{
+    font-weight: bold;
+}
+.clone{
+    display: none;
+}
+#box{
+    position: relative;
+}
+.user{
+    width: 60px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    text-align: center;
+    background-color: cadetblue;
+    opacity: 0.8;
+    font: bold 15px/30px "微软雅黑";
+    display: inline-block;
+    float: left;
+}
+#look{
+    float: left;
+    width: 100px;
+    height: 25px;
+}
+#lookid,#delete,#priceSort{
+    width:60px;
+    height: 31px;
+    float: left;
+}
+#delete{
+    margin-left: 10px;
+}
+#priceSort{
+    width: 80px;
+    margin-left: 20px;
+}
+#name-list{
+    background-color: orange;
+    display: none;
+}
+#name-list li:hover{
+    background-color: orange;
+    color: white;
+}
+#name-list li{
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    top: 30px;
+    border: 1px solid #333;
+}
+#name-list li:nth-child(2){
+    top: 60px;
+}

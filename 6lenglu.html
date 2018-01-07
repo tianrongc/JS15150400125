@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>书库管理</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.js"></script>
+    <![ednif]-->
+   
+    </head>
+<body>
+      <!--顶部导航-->
+   <div class="navbar navbar-inverse"role="navigation" id="menu-nav" style="background-color: white; border: none;">
+   <div class="container">
+           <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color: mediumseagreen;">
+                   <span class="sr-only">切换导航</span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+               </button>
+               <a href="#" class="navbar-brand" style="color:mediumseagreen; font-size: 180%;">图书管理系统</a>
+           </div>
+           <div class="navbar-collapse collapse">
+             <ul class="nav navbar-nav" >
+                 <li ><a href="1shouye.html" >首页</a></li>
+                <li ><a href="2shukuguanli.html" >书库管理</a></li>
+                <li ><a href="3tushuchaxun.html" >图书查询</a></li>
+                    <li ><a href="4tushuliulan.html" >图书浏览</a>
+                     
+                 </li>
+                   <li ><a href="5zhuce.html" > 注册</a></li>
+                 <li class="active"><a href="#ad-carousel" style="background-color: mediumseagreen; ">登录</a></li>
+             </ul>
+           </div>
+       </div>
+   </div>
+  
+<form id="form1" name="form1" method="post" action="" >
+用户名:
+<input type="text" name="username" />
+<br/>
+<br/>
+密码:
+<input type="password" name="password" />
+<br />
+<br/>
+<input type="button" value="登入" onclick="check();"/>
+<input type="reset" value="重置" />
+</form>
+<script language="javascript">
+function check(){
+ var user = "user", password = "123456";
+ var temUser = document.form1.username.value;
+ var temPassword = document.form1.password.value;
+ if(user==temUser && password==temPassword)
+{
+ alert("登入成功!");
+window.location.href="1shouye.html";
+}
+ else{ 
+   alert("用户名或密码错误!");
+
+  }
+}
+    </script>
+   
+   
+   
+ 
+</body>
+</html>  
