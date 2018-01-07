@@ -14,36 +14,83 @@
     </head>
 <body>
       <!--顶部导航-->
-   <div class="navbar navbar-inverse"role="navigation" id="menu-nav">
+   <div class="navbar navbar-inverse"role="navigation" id="menu-nav" style="background-color: white; border: none;">
    <div class="container">
            <div class="navbar-header">
-               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color: mediumseagreen;">
                    <span class="sr-only">切换导航</span>
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
                </button>
-               <a href="#" class="navbar-brand">图书管理系统</a>
+               <a href="#" class="navbar-brand" style="color:mediumseagreen; font-size: 180%;">图书管理系统</a>
            </div>
            <div class="navbar-collapse collapse">
-             <ul class="nav navbar-nav">
-                 <li class="active"><a href="#ad-carousel">首页</a></li>
-                 <li><a href="#summary-container">书库管理</a></li>
-                 <li class="dropdown">
-                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">图书查询<span class="caret"></span></a>
-                     <ul class="dropdown-menu" role="menu">
-                         <li><a href="#feature-tab" data-tab="tab-chrome">Chrom</a></li>
-                         <li><a href="#feature-tab" data-tab="tab-firefox">Firefox</a></li>
-                         <li><a href="#feature-tab" data-tab="tab-safari">Safari</a></li>
-                         <li><a href="#feature-tab" data-tab="tab-opera">Opera</a></li>
-                         <li><a href="#feature-tab" data-tab="tab-ie">IE</a></li>
-                     </ul>
+             <ul class="nav navbar-nav" >
+                 <li class="active"><a href="#ad-carousel" style="background-color: mediumseagreen; ">首页</a></li>
+                 <li><a href="#summary-container" >书库管理</a></li>
+                 <li>
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">图书查询</a>
+                     
                  </li>
                  <li><a href="#">注册</a></li>
                  <li><a href="#">登录</a></li>
              </ul>
            </div>
        </div>
-   </div> 
+   </div>
+   
+   
+   
+   
+  <div id="ad-carousel" class="carousel slide" data-ride="carousel">
+       <ol class="carousel-indicators">
+           <li data-target="#ad-carousel" data-slide-to="0" class="active"></li>
+           <li data-target="#ad-carousel" data-slide-to="1"></li>
+           <li data-target="#ad-carousel" data-slide-to="2"></li>
+           <li data-target="#ad-carousel" data-slide-to="3"></li>
+           <li data-target="#ad-carousel" data-slide-to="4"></li>
+       </ol>
+       <div class="carousel-inner">
+           <div class="item active">
+               <img src="5.jpg" alt="1 slide"style="width: 100%;height: 200%;">
+               <div class="container">
+                   
+               </div>
+           </div>
+           <div class="item">
+                <img src="1.jpg" alt="2 slide" style="width: 100%;height: 200%;">
+           </div>
+           <div class="item">
+                <img src="2.jpg" alt="3 slide"style="width: 100%;height: 200%;">
+           </div>
+           <div class="item">
+                <img src="3.jpg" alt="4 slide"style="width: 100%;height: 200%;">
+           </div>
+           <div class="item">
+                <img src="4.jpg" alt="5 slide"style="width: 100%;height: 200%;">
+           </div>
+       </div>
+       <a href="#ad-carousel" data-slide="prev" class="left carousel-control"><span class="glyphicon glyphicon-chevron-left"></span></a>
+         <a href="#ad-carousel" data-slide="next" class="right carousel-control"><span class="glyphicon glyphicon-chevron-right"></span></a>
+   </div>
+   <script src="jquery-1.11.1.js"></script>
+    <script src="bootstrap.js"></script>
+    <script>
+       $(function(){
+           $('#ad-carousel').carousel();
+           $('#menu-nav .navbar-collapse a').click(function(e){
+               var href = $(this).attr('href');
+               var tabId = $(this).attr('data-tab');
+               if('#'!==href){
+                   e.preventDefault();
+                   $(document).scrollTop($(href).offset().top - 70);
+                   if(tabId){
+                       $('#feature-tab a[href=#'+tabId +']').tab('show');
+                   }
+               }
+           })
+       })
+    </script>
 </body>
-</html>
+</html>  
