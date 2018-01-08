@@ -42,19 +42,19 @@
            </div>
        </div>
    </div>
-     <div class="div1" style="width: 100px;height: 100px;border: 1px solid mediumseagreen;"></div>
-      <input type="text" id="bookname" placeholder="书名"style="border: 5px solid mediumseagreen;">
-    <input type="text" id="author" placeholder="作者"style="border: 5px solid mediumseagreen;">
-    <input type="text" id="price" placeholder="价格"style="border: 5px solid mediumseagreen;">
-    <input type="button" id="addUser" value="添加"style="border: 5px solid mediumseagreen;">
+     <div class="div1" style="width: 700px;height: 600px;border: 5px solid mediumseagreen;position: absolute;left: 232px;top: 100px;"></div>
+      <input type="text" id="bookname" placeholder="书名"style="border: 5px solid mediumseagreen;position: absolute;top: 120px;left: 270px;">
+    <input type="text" id="author" placeholder="作者"style="border: 5px solid mediumseagreen;position: absolute;top: 120px;left: 460px;">
+    <input type="text" id="price" placeholder="价格"style="border: 5px solid mediumseagreen;position: absolute;top: 120px;left: 650px;">
+    <input type="button" id="addUser" value="添加"style="border: 5px solid mediumseagreen;position: absolute;top: 120px;left: 840px;">
     <br>
-    <table border="0" cellspacing="0" cellpadding="0" id="table"style="border: 3px solid mediumseagreen;">
+    <table border="0" cellspacing="0" cellpadding="0" id="table"style="border: 5px solid mediumseagreen;width: 620px;position: absolute;top: 160px;left: 270px;">
         <thead>
             <th>书号</th>
             <th>书名</th>
             <th>作者</th>
             <th>价格</th>
-            <th>操作</th>
+            <th>删除</th>
 
         </thead>
         <tbody id="tby">
@@ -63,7 +63,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><button type="button" name="button" id="familk">删除</button></td>
+                <td><button type="button" name="button" id="familk" style="width: 50px;height: 25px;">删除</button></td>
             </tr>
         </tbody>
     </table>
@@ -109,6 +109,7 @@
                     sys.addBook(data.books[i].name,data.books[i].author,data.books[i].price);
                 }
             }
+           
             oTbody.innerHTML = "";
             for(var i = 0;i<sys.bookArr.length;i++){
                 var newTr = cloneTr.cloneNode(true);
@@ -120,16 +121,14 @@
                 tds[2].innerHTML = sys.bookArr[i].author;
                 tds[3].innerHTML = sys.bookArr[i].price;
                 oTbody.appendChild(newTr);
+               
+         
+      
 
             };
         }
-   EventUtill.removeEventHandler(del,"click",delBooks);
-             function del(){
-                   var n = obj.id;
-                   var m = n.slice(4);
-                    var b = Number(m);
-                    del(b);
-             }
+
+      
 
     </script>
    
