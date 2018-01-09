@@ -33,9 +33,7 @@
                 <li ><a href="3tushuchaxun.html" >图书查询</a>
                      
                  </li>
-                 <li ><a href="4tushuliulan.html" >图书浏览</a>
-                     
-                 </li>
+                
                  <li><a href="5zhuce.html">注册</a></li>
                  <li><a href="6lenglu.html">登录</a></li>
              </ul>
@@ -63,7 +61,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><button type="button" name="button" id="familk" style="width: 50px;height: 25px;">删除</button></td>
+                <td><button type="button" name="button" class="Idelete"onclick="Iremove" style="width: 50px;height: 25px;">删除</button></td>
             </tr>
         </tbody>
     </table>
@@ -123,7 +121,20 @@
                 oTbody.appendChild(newTr);
                
          
-      
+       function Iremove(){
+                var Idelete = document.getElementsByClassName('Idelete');
+               
+                for (var i = 0; i< Idelete.length; i++) {
+            Idelete[i].onclick = (function() {
+                return function() {
+                     this.parentNode.parentNode.innerHTML = '';
+                }
+            })(i);
+                
+            }
+               
+            }
+       Iremove();
 
             };
         }
