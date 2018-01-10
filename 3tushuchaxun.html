@@ -41,9 +41,9 @@
       
        <div class="div1" style="width: 700px;height: 600px;border: 5px solid mediumseagreen;position: absolute;left: 232px;top: 100px;"></div>
        <div class="header">
-      <input type="text" id="value1" placeholder="书名"style="border: 5px solid mediumseagreen;position: absolute;top: 120px;left: 270px;">
-    <input type="text" id="value2" placeholder="作者"style="border: 5px solid mediumseagreen;position: absolute;top: 120px;left: 460px;">
-    <input type="text" id="value3" placeholder="出版社"style="border: 5px solid mediumseagreen;position: absolute;top: 120px;left: 650px;">
+      <input type="text" id="valuea" placeholder="书名"style="border: 5px solid mediumseagreen;position: absolute;top: 120px;left: 270px;">
+    <input type="text" id="valueb" placeholder="作者"style="border: 5px solid mediumseagreen;position: absolute;top: 120px;left: 460px;">
+    <input type="text" id="valuec" placeholder="出版社"style="border: 5px solid mediumseagreen;position: absolute;top: 120px;left: 650px;">
     <input type="button" id="find" value="搜索"style="border: 5px solid mediumseagreen;position: absolute;top: 120px;left: 840px;"onclick="search()">
     
     <br>
@@ -57,19 +57,19 @@
             <th>数量</th>
            <tr>
               <td>
-                  <p class="press">我</p>
+                  <p class="chubanshe">作家出版社</p>
               </td>
               <td>
-                  <p class="book">你</p>
+                  <p class="book">人间失格</p>
               </td>
                <td>
-                  <p class="author">们</p>
+                  <p class="author">太宰治</p>
               </td>
               <td>
-                  <p class="price">3</p>
+                  <p class="price">25.00</p>
               </td>
                <td>
-                  <p class="Onumber">1</p>
+                  <p class="number">100</p>
               </td>
                
                
@@ -78,29 +78,109 @@
            </tr>
              <tr>
               <td>
-                  <p class="press">1</p>
+                  <p class="chubanshe">南海出版公司</p>
               </td>
               <td>
-                  <p class="book">2</p>
+                  <p class="book">解忧杂货铺</p>
               </td>
                <td>
-                  <p class="author">3</p>
+                  <p class="author">东野圭吾</p>
               </td>
               <td>
-                  <p class="price">3</p>
+                  <p class="price">39.50</p>
               </td>
                <td>
-                  <p class="Onumber">1</p>
+                  <p class="number">200</p>
               </td>
                
                
                
                
            </tr>
-
-     
-       
-                
+<tr>
+              <td>
+                  <p class="chubanshe">上海人民出版社</p>
+              </td>
+              <td>
+                  <p class="book">追风筝的人</p>
+              </td>
+               <td>
+                  <p class="author">卡勒得胡塞尼</p>
+              </td>
+              <td>
+                  <p class="price">29.00</p>
+              </td>
+               <td>
+                  <p class="number">150</p>
+              </td>
+               
+               
+               
+               
+           </tr>
+     <tr>
+              <td>
+                  <p class="chubanshe">北京联合出版社公司</p>
+              </td>
+              <td>
+                  <p class="book">天才在左疯子在右</p>
+              </td>
+               <td>
+                  <p class="author">高铭</p>
+              </td>
+              <td>
+                  <p class="price">39.80</p>
+              </td>
+               <td>
+                  <p class="number">220</p>
+              </td>
+               
+               
+               
+               
+           </tr>
+       <tr>
+              <td>
+                  <p class="chubanshe">作家出版社</p>
+              </td>
+              <td>
+                  <p class="book">活着</p>
+              </td>
+               <td>
+                  <p class="author">余华</p>
+              </td>
+              <td>
+                  <p class="price">28.00</p>
+              </td>
+               <td>
+                  <p class="number">300</p>
+              </td>
+               
+               
+               
+               
+           </tr>
+            <tr>
+              <td>
+                  <p class="chubanshe">人民文学出版社</p>
+              </td>
+              <td>
+                  <p class="book">芳华</p>
+              </td>
+               <td>
+                  <p class="author">严歌苓</p>
+              </td>
+              <td>
+                  <p class="price">39.00</p>
+              </td>
+               <td>
+                  <p class="number">100</p>
+              </td>
+               
+               
+               
+               
+           </tr>    
                 
                 
          
@@ -109,39 +189,37 @@
 
    <script>
         var find = document.getElementById('find');
-        //        搜索点击事件
+       
          function search()  {
-            //        获取搜索内容
-            var value1 = document.getElementById('value1'); //获取输入的书名
-            var value2 = document.getElementById('value2'); //获取输入的作者名
-            var value3 = document.getElementById('value3'); //获取输入的出版社名
+         
+            var valuea = document.getElementById('valuea'); //获取输入的书名
+            var valueb = document.getElementById('valueb'); //获取输入的作者名
+            var valuec = document.getElementById('valuec'); //获取输入的出版社名
             var book = document.getElementsByClassName('book'); //获取书库书名       
             var author = document.getElementsByClassName('author'); //获取书库作者名
-            var chubanshe = document.getElementsByClassName('press'); //获取书库出版社名
-//                     alert(book.length);
-             //遍历书库
+            var chubanshe = document.getElementsByClassName('chubanshe'); //获取书
             for (var i = 0; i < book.length; i++) {
 
-                if (value1.value == book[i].innerHTML) {
+                if (valuea.value == book[i].innerHTML) {
                     book[i].style.color = 'mediumseagreen';
                     book[i].style.backgroundColor = 'white';
-                } else if (value2.value == author[i].innerHTML) {
+                } else if (valueb.value == author[i].innerHTML) {
                     author[i].style.color = 'mediumseagreen';
                     author[i].style.backgroundColor = 'white';
-                } else if (value3.value == chubanshe[i].innerHTML) {
+                } else if (valuec.value == chubanshe[i].innerHTML) {
                     chubanshe[i].style.color = 'mediumseagreen';
                     chubanshe[i].style.backgroundColor = 'white';
 
 
                 } else {
                     book[i].parentNode.parentNode.style.display = 'none';
-                }
-
             }
-            value1.value = '';
-            value2.value = '';
-            value3.value = '';
+
         }
+            valuea.value = '';
+            valueb.value = '';
+            valuec.value = '';
+         }
 
        
 
